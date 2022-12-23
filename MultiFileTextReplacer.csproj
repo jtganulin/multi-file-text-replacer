@@ -4,22 +4,32 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <UseWindowsForms>True</UseWindowsForms>
+    <UseWindowsForms>False</UseWindowsForms>
     <StartupObject></StartupObject>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>Logo.ico</ApplicationIcon>
     <Title>Multi-File Text Replacer</Title>
-    <Version>2.0.0</Version>
+    <Version>3.0.0</Version>
     <Authors>Jeffrey Ganulin</Authors>
     <Description>This utility allows you to replace a string of text with a new one throughout multiple text files.</Description>
+    <Nullable>enable</Nullable>
+    <ErrorReport>prompt</ErrorReport>
+    <PackageProjectUrl>https://github.com/jtganulin/multi-file-text-replacer</PackageProjectUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <AnalysisLevel>6.0-all</AnalysisLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>none</DebugType>
+    <DebugType>portable</DebugType>
+    <WarningLevel>9999</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>none</DebugType>
+    <DebugType>portable</DebugType>
+    <WarningLevel>9999</WarningLevel>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="ListBoxBG.gif" />
     <Resource Include="Logo.jpg" />
   </ItemGroup>
 

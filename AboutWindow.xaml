@@ -1,22 +1,20 @@
 ﻿<Window x:Name="aboutWindow" x:Class="MultiFileTextReplacer.AboutWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="About Multi-File Text Replacer" Height="311.321" Width="416.068" Topmost="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" SnapsToDevicePixels="True" Icon="/Logo.jpg">
-	<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="276" Width="396">
-		<Button x:Name="btnClose" Content="Close" IsDefault="True" HorizontalAlignment="Left" Margin="311,246,0,0" VerticalAlignment="Top" Width="75" Click="btnClose_Click" IsCancel="True"/>
-		<Label Content="About Multi-File Text Replacer" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="193" FontWeight="Bold"/>
-		<Label Content="This program allows you to replace specified text with new text&#xD;&#xA;throughout multiple text files.&#xD;&#xA;&#xD;&#xA;Created by Jeffrey Ganulin. For help / feedback you can email me at:" HorizontalAlignment="Center" Margin="0,31,0,0" VerticalAlignment="Top" Height="77" Width="376"/>
-		<TextBlock Margin="15,101,209,156">           
+        Title="About Multi-File Text Replacer" Height="394" Width="515" Topmost="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" SnapsToDevicePixels="True" Icon="/Logo.jpg">
+	<Grid Margin="10,10,10,0" Height="374" VerticalAlignment="Top">
+		<Label Content="This allows you to replace specified text with new text throughout multiple text files.&#xA;&#xA;Created by Jeffrey Ganulin 2022.&#xA;For help / feedback you can email me at:" HorizontalAlignment="Center" VerticalAlignment="Top" Height="78" Width="475"/>
+		<TextBlock Margin="224,53,0,388">
 			<Hyperlink NavigateUri="mailto:jtganulin@jgproductions.x10.bz" Foreground="#FF5AB8C7"  RequestNavigate="OnNavigate">
 				jtganulin@jgproductions.x10.bz
 			</Hyperlink>
 		</TextBlock>
-		<Label Content="Check out the source code at:&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,138,0,0" VerticalAlignment="Top" Height="77" Width="376"/>
-		<TextBlock Margin="15,159,84,98">
-			<Hyperlink Foreground="#FF5AB8C7" NavigateUri="https://github.com/jtganulin/multi-file-text-replacer" RequestNavigate="OnNavigate" TextDecorations="Underline">
-				https://github.com/jtganulin/multi-file-text-replacer
-			</Hyperlink>
-		</TextBlock>
+		<Label Content="Instructions for Use:&#xA;" HorizontalAlignment="Left" Margin="10,78,0,0" Width="360" Foreground="Black" Height="28" VerticalAlignment="Top" FontWeight="Bold"/>
+		<Label Content="Step 1: Enter the text that you wish to replace in your file(s).&#xD;&#xA;Note that you can use regular expressions to search by selecting it under Search Mode.&#xA;Step 2: Enter the new text that you want in your file(s).&#xA;Step 3: Click Add File(s) to begin selecting target files or drag and drop files into the&#xD;&#xA;file selection box. You may add more files or clear the selection if needed.&#xD;&#xA;Remove one or more files by clicking them in the selection box and pressing the Delete&#xD;&#xA;button on your keyboard.&#xA;Step 4: Determine if you want backups of the original files to be created alongside the&#xD;&#xA;modified versions by using the checkbox.&#xD;&#xA;Step 5: Click Go to begin the replacement process." HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top"/>
+		<Button x:Name="btnClose" Content="Close" IsDefault="True" Click="btnClose_Click" IsCancel="True" RenderTransformOrigin="0.015,0.155" Margin="179,312,184,0" Height="30" VerticalAlignment="Top"/>
+		<TextBlock Margin="235,53,-15,0" Height="21" VerticalAlignment="Top"><Hyperlink NavigateUri="mailto:jtganulin@jgproductions.x10.bz" Foreground="#FF5AB8C7"  RequestNavigate="OnNavigate"><Run Text="jtganulin@jgproductions.x10.bz"/></Hyperlink></TextBlock>
+		<TextBlock Margin="0,284,14,0" Height="23" VerticalAlignment="Top" HorizontalAlignment="Right" Width="302"><Hyperlink Foreground="#FF5AB8C7" NavigateUri="https://github.com/jtganulin/multi-file-text-replacer" RequestNavigate="OnNavigate" TextDecorations="Underline"><Run Text="https://github.com/jtganulin/multi-file-text-replacer"/></Hyperlink></TextBlock>
+		<Label Content="Check out the source code at:" Margin="8,279,316,0" VerticalAlignment="Top" Height="28" HorizontalAlignment="Left"/>
 
 	</Grid>
 </Window>

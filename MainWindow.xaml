@@ -7,12 +7,12 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="300"/>
 		</Grid.RowDefinitions>
-		<TextBox x:Name="findBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Original Text Here" VerticalAlignment="Top" Width="204" Margin="10,205,0,0" MaxLines="1"/>
-		<TextBox x:Name="replaceBox" TextWrapping="Wrap" Text="New Text Here" Margin="10,259,456,0" MaxLines="1" RenderTransformOrigin="0.295,0.455" Height="22" VerticalAlignment="Top"/>
-		<Label Content="Replace text with:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,233,0,0" Foreground="Black" FontWeight="Bold" Height="26" Width="111"/>
-		<Label Content="Text to replace:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,180,0,0" Foreground="Black" FontWeight="Bold" Height="26" Width="96"/>
-		<Label Content="With this utility, you can replace specified text with new text &#xA;throughout multiple files.&#xA;Instructions for Use:&#xA;Step 1: Enter the text that you wish to replace in your file(s).&#xA;Step 2: Enter the new text that you wish to display in your file(s).&#xA;Step 3: Click Add File(s).&#xA;Step 4: Select the files you wish to replace text in, and click Open.&#xA;Step 5: Verify the files you selected in the box to the right. &#xA;You may add more files or clear the selection.&#xA;Step 6: Click Go to begin the replacement." HorizontalAlignment="Left" Margin="10,10,0,0" Width="360" Foreground="Black" Height="185" VerticalAlignment="Top"/>
-		<Button x:Name="btnGo" Content="Go" HorizontalAlignment="Left" Width="125" Margin="245,202,0,0" Click="btnGo_Click" FontSize="16" IsDefault="True" Height="77" VerticalAlignment="Top">
+		<TextBox x:Name="findBox" HorizontalAlignment="Left" Height="45" TextWrapping="Wrap" VerticalAlignment="Top" Width="360" Margin="10,34,0,0" MaxLines="5" Foreground="Black" Background="WhiteSmoke"/>
+		<TextBox x:Name="replaceBox" TextWrapping="Wrap" Margin="10,120,300,0" MaxLines="1" Height="45" VerticalAlignment="Top" Foreground="Black" Background="WhiteSmoke"/>
+		<!--		</!-->
+		<Label Content="Replace With:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,94,0,0" Foreground="Black" FontWeight="Bold" Height="26" Width="111"/>
+		<Label Content="Find Text:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,9,0,0" Foreground="Black" FontWeight="Bold" Height="26" Width="96"/>
+		<Button x:Name="btnGo" Content="Go" HorizontalAlignment="Left" Width="125" Margin="245,202,0,0" Click="btnGo_Click" FontSize="16" IsDefault="True" Height="78" VerticalAlignment="Top">
 			<Button.Background>
 				<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
 			</Button.Background>
@@ -22,19 +22,21 @@
 				<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
 			</Button.Background>
 		</Button>
-		<Button x:Name="addFiles" Content="Add File(s)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="396,259,0,0" Click="AddFiles_Click" Height="20">
+		<Button x:Name="addFiles" Content="Add File(s)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="397,260,0,0" Click="AddFiles_Click" Height="20">
 			<Button.Background>
 				<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
 			</Button.Background>
 		</Button>
-		<ListBox x:Name="fileSelectionBox" Margin="397,33,0,0" Background="#FFD9FFFD" Height="219" VerticalAlignment="Top" HorizontalAlignment="Left" Width="259" MouseDoubleClick="fileSelectionBox_MouseDoubleClick" KeyDown="fileSelectionBox_KeyDown" SelectionMode="Extended"/>
-		<!-- <Button x:Name="optionsBtn" Content="Options" HorizontalAlignment="Left" Margin="574,381,0,0" VerticalAlignment="Top" Width="82" Background="#FFDEE6DE" Height="25" BorderThickness="2" Click="optionsBtn_Click"/> -->
-		<!-- <Label Content="Adjust program settings, style, and more:" HorizontalAlignment="Left" Margin="342,381,0,0" VerticalAlignment="Top" Foreground="Black"/> -->
-		<Label x:Name="lblSelectInfo" Content="Selected Files:" VerticalAlignment="Top" Height="23" Margin="396,10,14,0"/>
-		<Button x:Name="aboutBtn" Content="About / Help" Margin="485,260,0,0" RenderTransformOrigin="0.486,1.111" Click="aboutBtn_Click" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="82">
+		<ListBox x:Name="FileSelectionBox" Margin="397,33,0,0" Height="219" VerticalAlignment="Top" HorizontalAlignment="Left" Width="259" MouseDoubleClick="FileSelectionBox_MouseDoubleClick" KeyDown="FileSelectionBox_KeyDown" SelectionMode="Extended" AllowDrop="True" Tag="FileSelectionBox" DragOver="FileSelectionBox_DragOver" Drop="FileSelectionBox_Drop"/>
+		<Label x:Name="lblSelectInfo" Content="Selected Files:" VerticalAlignment="Top" Height="23" Margin="396,10,14,0" FontWeight="Bold"/>
+		<Button x:Name="aboutBtn" Content="About / Help" Margin="485,260,0,0" RenderTransformOrigin="0.486,1.111" Click="AboutBtn_Click" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="82">
 			<Button.Background>
 				<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
 			</Button.Background>
 		</Button>
+		<RadioButton x:Name="radioModeNormal" Content="Normal Search" HorizontalAlignment="Left" Margin="10,202,0,0" VerticalAlignment="Top" IsChecked="True" />
+		<RadioButton x:Name="radioModeRegex" Content="Regular Expressions" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top"/>
+		<CheckBox x:Name="bckCheckBox" Content="Backup files before modifying?" HorizontalAlignment="Left" Margin="10,257,0,0" VerticalAlignment="Top" IsChecked="True" />
+		<Label x:Name="label" Content="Search Mode:" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 	</Grid>
 </Window>
