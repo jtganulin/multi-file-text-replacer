@@ -87,14 +87,14 @@ public partial class MainWindow : Window
 
 
 	// Allow the Add Files button to bring up the Open files dialog
-	public void AddFiles_Click(object sender, RoutedEventArgs e)
+	private void AddFiles_Click(object sender, RoutedEventArgs e)
 	{
 		ShowFileSelectDialog(sender, e);
 	}
 
 
 	// Clear FileSelection ListBox and re-show the info BG
-	public void ClearFiles_Click(object sender, RoutedEventArgs e)
+	private void ClearFiles_Click(object sender, RoutedEventArgs e)
 	{
 		// If there are no files in the selection we don't need to warn the user
 		if (FileSelectionBox.Items.Count > 0)
